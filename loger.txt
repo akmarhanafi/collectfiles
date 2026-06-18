@@ -1,0 +1,1313 @@
+Started by user sdet
+Replayed #45
+[Pipeline] Start of Pipeline
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named version (to a value of type String) which could lead to memory leaks or other issues.
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named branch (to a value of type String) which could lead to memory leaks or other issues.
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named testsResult (to a value of type Integer) which could lead to memory leaks or other issues.
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named environment (to a value of type String) which could lead to memory leaks or other issues.
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named dastStatus (to a value of type String) which could lead to memory leaks or other issues.
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named squadName (to a value of type String) which could lead to memory leaks or other issues.
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named sheetTitle (to a value of type String) which could lead to memory leaks or other issues.
+[Pipeline] timeout
+Timeout set to expire in 12 hr
+[Pipeline] {
+[Pipeline] node
+Still waiting to schedule task
+‘alicloud-officeless-jenkins-staging-web-1-i-k1a1jbqqioubmum1bunk’ is offline
+Running on alicloud-officeless-jenkins-staging-web-1-i-k1a1jbqqioubmum1bunk in /root/workspace/SDET-XG/Production/Officeless/Core/plugin-service
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Automation)
+[Pipeline] stage
+[Pipeline] { (Setup)
+[Pipeline] withCredentials
+Masking supported pattern matches of $DOCKER_USERNAME or $DOCKER_PASSWORD
+[Pipeline] {
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [DOCKER_PASSWORD, DOCKER_USERNAME]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ docker login imageregistry-shared-alpha-registry-vpc.ap-southeast-5.cr.aliyuncs.com -u **** -p ****
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
++ docker pull imageregistry-shared-alpha-registry-vpc.ap-southeast-5.cr.aliyuncs.com/mekariengineering/pokemon-play:EX-cr-4026
+EX-cr-4026: Pulling from mekariengineering/pokemon-play
+db53381ee51f: Pulling fs layer
+e5203b2bfeff: Pulling fs layer
+8fcda2b4d799: Pulling fs layer
+2933ecab0f11: Pulling fs layer
+c83419f44309: Pulling fs layer
+76e6b8204a89: Pulling fs layer
+2f2ab6e4eb46: Pulling fs layer
+0b22ec2d9b1a: Pulling fs layer
+ad285b561a73: Pulling fs layer
+557ef6e942a6: Pulling fs layer
+94d4c14c6539: Pulling fs layer
+2933ecab0f11: Waiting
+486c4a6fce0e: Pulling fs layer
+c83419f44309: Waiting
+2186637affec: Pulling fs layer
+76e6b8204a89: Waiting
+0c69285296bf: Pulling fs layer
+0b22ec2d9b1a: Waiting
+f40e348d3e0a: Pulling fs layer
+ad285b561a73: Waiting
+557ef6e942a6: Waiting
+2f2ab6e4eb46: Waiting
+94d4c14c6539: Waiting
+486c4a6fce0e: Waiting
+2186637affec: Waiting
+0c69285296bf: Waiting
+e5203b2bfeff: Verifying Checksum
+e5203b2bfeff: Download complete
+db53381ee51f: Verifying Checksum
+db53381ee51f: Download complete
+c83419f44309: Download complete
+8fcda2b4d799: Verifying Checksum
+8fcda2b4d799: Download complete
+2f2ab6e4eb46: Verifying Checksum
+2f2ab6e4eb46: Download complete
+0b22ec2d9b1a: Verifying Checksum
+0b22ec2d9b1a: Download complete
+ad285b561a73: Verifying Checksum
+ad285b561a73: Download complete
+557ef6e942a6: Verifying Checksum
+557ef6e942a6: Download complete
+76e6b8204a89: Verifying Checksum
+76e6b8204a89: Download complete
+486c4a6fce0e: Download complete
+2933ecab0f11: Verifying Checksum
+2933ecab0f11: Download complete
+2186637affec: Verifying Checksum
+2186637affec: Download complete
+94d4c14c6539: Verifying Checksum
+94d4c14c6539: Download complete
+db53381ee51f: Pull complete
+e5203b2bfeff: Pull complete
+0c69285296bf: Verifying Checksum
+0c69285296bf: Download complete
+f40e348d3e0a: Verifying Checksum
+f40e348d3e0a: Download complete
+8fcda2b4d799: Pull complete
+2933ecab0f11: Pull complete
+c83419f44309: Pull complete
+76e6b8204a89: Pull complete
+2f2ab6e4eb46: Pull complete
+0b22ec2d9b1a: Pull complete
+ad285b561a73: Pull complete
+557ef6e942a6: Pull complete
+94d4c14c6539: Pull complete
+486c4a6fce0e: Pull complete
+2186637affec: Pull complete
+0c69285296bf: Pull complete
+f40e348d3e0a: Pull complete
+Digest: sha256:e0dde8f04c532592cf68b44412668eedfe6bbad538dc509f1b1fe26cad7a1649
+Status: Downloaded newer image for imageregistry-shared-alpha-registry-vpc.ap-southeast-5.cr.aliyuncs.com/mekariengineering/pokemon-play:EX-cr-4026
+imageregistry-shared-alpha-registry-vpc.ap-southeast-5.cr.aliyuncs.com/mekariengineering/pokemon-play:EX-cr-4026
++ docker ps -a
+CONTAINER ID   IMAGE                  COMMAND                CREATED       STATUS                        PORTS                                                 NAMES
+805cb27cbbf9   datadog/agent:latest   "/bin/entrypoint.sh"   2 years ago   Up About a minute (healthy)   0.0.0.0:8125->8125/udp, :::8125->8125/udp, 8126/tcp   datadog
++ docker images
+REPOSITORY                                                                                              TAG          IMAGE ID       CREATED          SIZE
+imageregistry-shared-alpha-registry-vpc.ap-southeast-5.cr.aliyuncs.com/mekariengineering/pokemon-play   EX-cr-4026   0e637e09691a   28 minutes ago   3.29GB
+datadog/agent                                                                                           latest       9ea7c517c16e   2 years ago      1.29GB
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run Automation)
+[Pipeline] sh
++ sudo rm -rf /root/report-mob-pw-serial/46/
+[Pipeline] sh
++ sudo mkdir -p /root/report-mob-pw-serial/46/
+[Pipeline] sh
++ sudo rm -rf /root/video-pg-pw-serial/46/
+[Pipeline] sh
++ sudo mkdir -p /root/video-pg-pw-serial/46/
+[Pipeline] sh
++ docker run --shm-size=8G -v /root/report-mob-pw-serial/46/:/app/reports -v /root/video-pg-pw-serial/46/:/app/report-video --env ENV=production --env squad=mob --env dast=false --env tag=(?=.*@sftp)(?!.*@api)(?!.*@skip-production)(?!.*@wip) --env SHEET_TITLE=default imageregistry-shared-alpha-registry-vpc.ap-southeast-5.cr.aliyuncs.com/mekariengineering/pokemon-play:EX-cr-4026
+DAST not active
+Client ID: clientid-5279, Client Secret: secret-61360017-fcd2-43ff-b3b1-07243f1e9402
+supellex aspicio
+Client ID: clientid-9547, Client Secret: secret-0c864f8d-8c3a-4243-abb0-779d48d0407a
+
+Running 19 tests using 1 worker
+
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘   1 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:79:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734332-Transfer file via SFTP with password auth returns 200 @p0 @positive @sftp-transfer (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘   2 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:79:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734332-Transfer file via SFTP with password auth returns 200 @p0 @positive @sftp-transfer (retry #1) (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘   3 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:103:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734333-Transfer file via SFTP with private key auth returns 200 @p0 @positive @sftp-transfer @private-key (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+  ✘   4 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:103:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734333-Transfer file via SFTP with private key auth returns 200 @p0 @positive @sftp-transfer @private-key (retry #1) (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+  ✘   5 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:127:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734337-Transfer file with disallowed extension returns 400 @p0 @negative @sftp-transfer (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘   6 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:127:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734337-Transfer file with disallowed extension returns 400 @p0 @negative @sftp-transfer (retry #1) (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+  ✘   7 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:150:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734345-Download file from SFTP returns 200 with presigned URL @p0 @positive @sftp-download (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘   8 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:150:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734345-Download file from SFTP returns 200 with presigned URL @p0 @positive @sftp-download (retry #1) (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+  ✘   9 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:179:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734346-Download file with private key auth returns 200 @p0 @positive @sftp-download @private-key (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘  10 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:179:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734346-Download file with private key auth returns 200 @p0 @positive @sftp-download @private-key (retry #1) (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘  11 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:200:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734347-Download file not found returns 400 @p0 @negative @sftp-download (1.0m)
+🔐 Fetching token for user: admin_plugin_self_handled in env: production
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+  ✘  12 [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:200:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734347-Download file not found returns 400 @p0 @negative @sftp-download (retry #1) (1.0m)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734220'[39m, status: [32m'timedOut'[39m }
+{ case_id: [32m'5734247'[39m, status: [32m'timedOut'[39m }
+  ✘  13 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:50:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734220,5734247-Initialize Transfer File API - Success SFTP with Password @p0 @positive @sftp-transfer (1.0m)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+{ case_id: [32m'5734220'[39m, status: [32m'passed'[39m }
+{ case_id: [32m'5734247'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  14 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:50:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734220,5734247-Initialize Transfer File API - Success SFTP with Password @p0 @positive @sftp-transfer (retry #1) (45.3s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734221'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  15 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:91:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734221-Initialize Transfer File API - Success Transfer .csv File @p0 @positive @sftp-transfer (41.4s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+{ case_id: [32m'5734222'[39m, status: [32m'failed'[39m }
+  ✘  16 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:130:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734222-Initialize Transfer File API - Success Transfer .xlsx File @p0 @positive @sftp-transfer (48.9s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734222'[39m, status: [32m'failed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✘  17 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:130:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734222-Initialize Transfer File API - Success Transfer .xlsx File @p0 @positive @sftp-transfer (retry #1) (52.5s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+{ case_id: [32m'5734235'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  18 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:169:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734235-Initialize Transfer File API - Success SFTP with Private Key ssh-rsa @p0 @positive @sftp-transfer @private-key (44.0s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734257'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  19 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:211:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734257-Initialize Download File API - Success SFTP with Password @p0 @positive @sftp-download (37.0s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+{ case_id: [32m'5734258'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  20 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:251:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734258-Initialize Download File API - Success SFTP with Private Key @p0 @positive @sftp-download @private-key (37.0s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+{ case_id: [32m'5734244'[39m, status: [32m'failed'[39m }
+  ✘  21 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:325:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734244-Initialize Transfer File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-transfer (30.2s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734244'[39m, status: [32m'failed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✘  22 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:325:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734244-Initialize Transfer File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-transfer (retry #1) (32.7s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734245'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  23 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:366:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734245-Initialize Transfer File API - Failed Invalid Credentials (Private Key) @p1 @negative @sftp-transfer @private-key (35.2s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734266'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  24 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:448:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734266-Initialize Download File API - Failed Disallowed Extension Type @p1 @negative @sftp-download (35.4s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734267'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  25 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:487:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734267-Initialize Download File API - Failed Mismatch Extension Type and File Header @p1 @negative @sftp-download (35.5s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734260'[39m, status: [32m'failed'[39m }
+  ✘  26 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:527:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734260-Initialize Download File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-download (49.3s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+{ case_id: [32m'5734260'[39m, status: [32m'failed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✘  27 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:527:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734260-Initialize Download File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-download (retry #1) (53.2s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+{ case_id: [32m'5734261'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  28 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:567:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734261-Initialize Download File API - Failed Invalid Credentials (Private Key) @p1 @negative @sftp-download @private-key (34.9s)
+Login submitted as ->  sdet-automation+adminpluginselfhandled@mekari.com
+Remember device checkbox not found (optional element)
+OTP page failed to appear within 10s. Current URL: https://studio.mekari.com/projects
+OTP verification page did not load within 10 seconds for sdet-automation+adminpluginselfhandled@mekari.com
+{ case_id: [32m'5734272'[39m, status: [32m'passed'[39m }
+Failed to push results to SDET service. Error: Request failed with status code 401
+  ✓  29 [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:607:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734272-Create SFTP Connection - Failed Empty Required Field username @p1 @negative @sftp-connection (23.3s)
+running global teardown
+Attempt 1 to update sheet...
+Sheet updated successfully: {
+  spreadsheetId: '12oSgRDU9eI1rbP7WHKMlSaQL3oL_WnfEuyY0IBACdno',
+  updatedRange: "'15164'!A1:L12349",
+  updatedRows: 12349,
+  updatedColumns: 12,
+  updatedCells: 147374
+}
+
+
+  1) [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:79:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734332-Transfer file via SFTP with password auth returns 200 @p0 @positive @sftp-transfer 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/transfer[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMDk5MTQsImlhdCI6MTc4MDQ1MjMxNCwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NTg3LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.ce8PruV8CFeja-GUCM1uJKUnCgBC6TbPQsVoFDetLRo[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 219[22m
+
+
+      85 |
+      86 |       // When: POST to SFTP transfer endpoint with password auth headers
+    > 87 |       const response = await request.post(url, {
+         |                                      ^
+      88 |         headers: passwordAuthHeaders,
+      89 |         data: body,
+      90 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:87:38
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/transfer[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMDk5OTcsImlhdCI6MTc4MDQ1MjM5NywiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NTg5LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ._aIhbYI97HA3wgS5boPYxpuydriBrTrldAjwZOOlkVU[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 219[22m
+
+
+      85 |
+      86 |       // When: POST to SFTP transfer endpoint with password auth headers
+    > 87 |       const response = await request.post(url, {
+         |                                      ^
+      88 |         headers: passwordAuthHeaders,
+      89 |         data: body,
+      90 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:87:38
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-api-api-plugin-sftp-A-2fefd-0-p0-positive-sftp-transfer-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-api-api-plugin-sftp-A-2fefd-0-p0-positive-sftp-transfer-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:103:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734333-Transfer file via SFTP with private key auth returns 200 @p0 @positive @sftp-transfer @private-key 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/transfer[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTAwODEsImlhdCI6MTc4MDQ1MjQ4MSwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NTkwLCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.Fgh8qtZ6tpeaKNa34IpKhHTY4jkrjYEGPU3jERTicvc[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: private_key[22m
+    [2m    - X-Connector-Private-Key: -----BEGIN OPENSSH PRIVATE KEY----- b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNlY2RzYS 1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQRHqMB18ZNVO1VJ4haIYeKsY6OFnAoc mtrW0KgUDh/P1HWHMezOM/8ETZ+v9ewfpc1a/uZS/8/+nAOPwX+srwWHAAAAqN2X9sXdl/ bFAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeowHXxk1U7VUni Fohh4qxjo4WcChya2tbQqBQOH8/UdYcx7M4z/wRNn6/17B+lzVr+5lL/z/6cA4/Bf6yvBY cAAAAgJ71WKLIA5wI/qjkJJOc1Y7YFJbqSmcWgRPht3v61OFsAAAAMc2Z0cGNsb3VkLmlv AQIDBA== -----END OPENSSH PRIVATE KEY-----[22m
+    [2m    - X-Connector-Host-Key-Algorithm: rsa-sha2-256[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 219[22m
+
+
+      109 |
+      110 |       // When: POST to SFTP transfer endpoint with private key auth headers
+    > 111 |       const response = await request.post(url, {
+          |                                      ^
+      112 |         headers: privateKeyAuthHeaders,
+      113 |         data: body,
+      114 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:111:38
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/transfer[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTAxNjUsImlhdCI6MTc4MDQ1MjU2NSwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NTkyLCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.41GzT2hujf0hjvkP7ovE-sxsAQoAFNtogWcZBuZsvr8[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: private_key[22m
+    [2m    - X-Connector-Private-Key: -----BEGIN OPENSSH PRIVATE KEY----- b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNlY2RzYS 1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQRHqMB18ZNVO1VJ4haIYeKsY6OFnAoc mtrW0KgUDh/P1HWHMezOM/8ETZ+v9ewfpc1a/uZS/8/+nAOPwX+srwWHAAAAqN2X9sXdl/ bFAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeowHXxk1U7VUni Fohh4qxjo4WcChya2tbQqBQOH8/UdYcx7M4z/wRNn6/17B+lzVr+5lL/z/6cA4/Bf6yvBY cAAAAgJ71WKLIA5wI/qjkJJOc1Y7YFJbqSmcWgRPht3v61OFsAAAAMc2Z0cGNsb3VkLmlv AQIDBA== -----END OPENSSH PRIVATE KEY-----[22m
+    [2m    - X-Connector-Host-Key-Algorithm: rsa-sha2-256[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 219[22m
+
+
+      109 |
+      110 |       // When: POST to SFTP transfer endpoint with private key auth headers
+    > 111 |       const response = await request.post(url, {
+          |                                      ^
+      112 |         headers: privateKeyAuthHeaders,
+      113 |         data: body,
+      114 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:111:38
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-api-api-plugin-sftp-A-26398-e-sftp-transfer-private-key-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-api-api-plugin-sftp-A-26398-e-sftp-transfer-private-key-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:127:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734337-Transfer file with disallowed extension returns 400 @p0 @negative @sftp-transfer 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/transfer[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTAyNDksImlhdCI6MTc4MDQ1MjY0OSwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NTk1LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.UUl_p9gzbyyZ3p5G-1D--xFnTGxkQICpr_wENojQH7k[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 219[22m
+
+
+      133 |
+      134 |       // When: POST to SFTP transfer endpoint with disallowed file extension
+    > 135 |       const response = await request.post(url, {
+          |                                      ^
+      136 |         headers: passwordAuthHeaders,
+      137 |         data: body,
+      138 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:135:38
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/transfer[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTAzMzMsImlhdCI6MTc4MDQ1MjczMywiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NTk2LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.hzPyIxt6VxNUNq7FEAogsE3dkf5AoZUytCRKPUt2bhk[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 219[22m
+
+
+      133 |
+      134 |       // When: POST to SFTP transfer endpoint with disallowed file extension
+    > 135 |       const response = await request.post(url, {
+          |                                      ^
+      136 |         headers: passwordAuthHeaders,
+      137 |         data: body,
+      138 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:135:38
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-api-api-plugin-sftp-A-f7a85-0-p0-negative-sftp-transfer-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-api-api-plugin-sftp-A-f7a85-0-p0-negative-sftp-transfer-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:150:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734345-Download file from SFTP returns 200 with presigned URL @p0 @positive @sftp-download 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/download[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTA0MTcsImlhdCI6MTc4MDQ1MjgxNywiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NTk4LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.GbD03m9jKxpVqMvgDl3rpPnDWSL9rLYHP7GJZtj_E-A[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 40[22m
+
+
+      156 |
+      157 |       // When: POST to SFTP download endpoint with password auth headers
+    > 158 |       const response = await request.post(url, {
+          |                                      ^
+      159 |         headers: passwordAuthHeaders,
+      160 |         data: body,
+      161 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:158:38
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/download[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTA1MDEsImlhdCI6MTc4MDQ1MjkwMSwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NjAwLCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.vwZZiLucj3V2mOONC1rk8vxShWhG9l0n1UAoCKqqqfg[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 40[22m
+
+
+      156 |
+      157 |       // When: POST to SFTP download endpoint with password auth headers
+    > 158 |       const response = await request.post(url, {
+          |                                      ^
+      159 |         headers: passwordAuthHeaders,
+      160 |         data: body,
+      161 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:158:38
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-api-api-plugin-sftp-A-4566c-L-p0-positive-sftp-download-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-api-api-plugin-sftp-A-4566c-L-p0-positive-sftp-download-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:179:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734346-Download file with private key auth returns 200 @p0 @positive @sftp-download @private-key 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/download[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTA1ODUsImlhdCI6MTc4MDQ1Mjk4NSwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NjA0LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.Z7vit4niztuhmUzIuewDU8LksGZdZu-c5aYiUm4LAeE[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: private_key[22m
+    [2m    - X-Connector-Private-Key: -----BEGIN OPENSSH PRIVATE KEY----- b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNlY2RzYS 1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQRHqMB18ZNVO1VJ4haIYeKsY6OFnAoc mtrW0KgUDh/P1HWHMezOM/8ETZ+v9ewfpc1a/uZS/8/+nAOPwX+srwWHAAAAqN2X9sXdl/ bFAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeowHXxk1U7VUni Fohh4qxjo4WcChya2tbQqBQOH8/UdYcx7M4z/wRNn6/17B+lzVr+5lL/z/6cA4/Bf6yvBY cAAAAgJ71WKLIA5wI/qjkJJOc1Y7YFJbqSmcWgRPht3v61OFsAAAAMc2Z0cGNsb3VkLmlv AQIDBA== -----END OPENSSH PRIVATE KEY-----[22m
+    [2m    - X-Connector-Host-Key-Algorithm: rsa-sha2-256[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 41[22m
+
+
+      187 |
+      188 |       // When: POST to SFTP download endpoint with private key auth headers
+    > 189 |       const response = await request.post(url, {
+          |                                      ^
+      190 |         headers: privateKeyAuthHeaders,
+      191 |         data: body,
+      192 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:189:38
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/download[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTA2NjksImlhdCI6MTc4MDQ1MzA2OSwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NjA1LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.IPcCCzQtn7RmxZPcRUxNL55sgqcU9ysLcnih0YeL4WI[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: private_key[22m
+    [2m    - X-Connector-Private-Key: -----BEGIN OPENSSH PRIVATE KEY----- b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAaAAAABNlY2RzYS 1zaGEyLW5pc3RwMjU2AAAACG5pc3RwMjU2AAAAQQRHqMB18ZNVO1VJ4haIYeKsY6OFnAoc mtrW0KgUDh/P1HWHMezOM/8ETZ+v9ewfpc1a/uZS/8/+nAOPwX+srwWHAAAAqN2X9sXdl/ bFAAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEeowHXxk1U7VUni Fohh4qxjo4WcChya2tbQqBQOH8/UdYcx7M4z/wRNn6/17B+lzVr+5lL/z/6cA4/Bf6yvBY cAAAAgJ71WKLIA5wI/qjkJJOc1Y7YFJbqSmcWgRPht3v61OFsAAAAMc2Z0cGNsb3VkLmlv AQIDBA== -----END OPENSSH PRIVATE KEY-----[22m
+    [2m    - X-Connector-Host-Key-Algorithm: rsa-sha2-256[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 41[22m
+
+
+      187 |
+      188 |       // When: POST to SFTP download endpoint with private key auth headers
+    > 189 |       const response = await request.post(url, {
+          |                                      ^
+      190 |         headers: privateKeyAuthHeaders,
+      191 |         data: body,
+      192 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:189:38
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-api-api-plugin-sftp-A-51fa7-e-sftp-download-private-key-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-api-api-plugin-sftp-A-51fa7-e-sftp-download-private-key-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:200:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734347-Download file not found returns 400 @p0 @negative @sftp-download 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/download[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTA3NTMsImlhdCI6MTc4MDQ1MzE1MywiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NjA3LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.ch8UBPgG49egmtwcPS3o5dt-2cdlhz7bELnOrfynkpY[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 59[22m
+
+
+      208 |
+      209 |       // When: POST to SFTP download endpoint with non-existent file path
+    > 210 |       const response = await request.post(url, {
+          |                                      ^
+      211 |         headers: passwordAuthHeaders,
+      212 |         data: body,
+      213 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:210:38
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: apiRequestContext.post: Request context disposed.
+    Call log:
+    [2m  - → POST https://connector-internal-preview.mekari.com/execute/sftp/download[22m
+    [2m    - user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.16 Safari/537.36[22m
+    [2m    - accept: */*[22m
+    [2m    - accept-encoding: gzip,deflate,br[22m
+    [2m    - Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4MTIwMTA4MzYsImlhdCI6MTc4MDQ1MzIzNiwiaXNzIjoiam9qb25vbWljLWp3dC1zZXJ2aWNlIiwibGFuZyI6ImVuX1VTIiwicHJvdmlkZXIiOiJtZWthcmktYnVpbGRlci1zdHVkaW8tdjIiLCJzZXNzX2lkIjo4NTI2NjA4LCJzZXNzaW9uX2lkIjoiIiwic2Vzc2lvbl9zZXR0aW5nIjoxLCJzdWIiOjIyMjEwNywidHlwZSI6MSwidXNlciI6eyJjb21wYW55X2lkIjoyODAwMywiZW1haWwiOiJzZGV0LWF1dG9tYXRpb24rYWRtaW5wbHVnaW5zZWxmaGFuZGxlZEBtZWthcmkuY29tIiwiaWQiOjIyMjEwNywidXNlcl9jb21wYW55X2lkIjoxOTQ3MDUsInVzZXJfcm9sZSI6NCwidXNlcl9yb2xlX25hbWUiOiJhZG1pbiJ9fQ.3xFNqhC8UO6b9dyslYliBqHPFfkyD4uq683Wefp1Lgc[22m
+    [2m    - Content-Type: application/json[22m
+    [2m    - X-Connector-Host: ap-northeast-1.sftpcloud.io[22m
+    [2m    - X-Connector-Port: 22[22m
+    [2m    - X-Connector-User: 3cf605731dd34fbf85fac934015d5163[22m
+    [2m    - X-Connector-Auth-Mode: password[22m
+    [2m    - X-Connector-Pass: XFiNtMkDZfPXs6gQ9PSjJUmWTyZCRFk8[22m
+    [2m    - X-Preview: selenium_officeless_connector_preview[22m
+    [2m    - content-length: 59[22m
+
+
+      208 |
+      209 |       // When: POST to SFTP download endpoint with non-existent file path
+    > 210 |       const response = await request.post(url, {
+          |                                      ^
+      211 |         headers: passwordAuthHeaders,
+      212 |         data: body,
+      213 |       });
+        at /app/tests/mob/core/api/api-plugin-sftp.spec.ts:210:38
+
+    attachment #1: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-api-api-plugin-sftp-A-c3c17-0-p0-negative-sftp-download-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-api-api-plugin-sftp-A-c3c17-0-p0-negative-sftp-download-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:130:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734222-Initialize Transfer File API - Success Transfer .xlsx File @p0 @positive @sftp-transfer 
+
+    TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="action-initialize-success"]') to be visible[22m
+
+
+       at ../helper/basic.ts:108
+
+      106 |
+      107 | export const waitForElement = async (element: Locator, states: keyof typeof ElementState = 'visible', timeout: number = 7000) => {
+    > 108 |   await element.waitFor({ state: states, timeout: timeout });
+          |                 ^
+      109 | }
+      110 |
+      111 | export const assertElement = async (element: Locator, condition: keyof typeof ElementCondition, text: string | null = null) => {
+        at waitForElement (/app/helper/basic.ts:108:17)
+        at PluginEndpointsStudioGen2Page.successInitializeCall (/app/pages/mob/studio_gen2_plugin_endpoints.page.ts:161:25)
+        at /app/tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:158:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-7b913-e-p0-positive-sftp-transfer-MOB/failure.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/core-web-plugins-studio-ge-7b913-e-p0-positive-sftp-transfer-MOB/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    TimeoutError: locator.waitFor: Timeout 20000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('[data-testid="action-initialize-success"]') to be visible[22m
+
+
+       at ../helper/basic.ts:108
+
+      106 |
+      107 | export const waitForElement = async (element: Locator, states: keyof typeof ElementState = 'visible', timeout: number = 7000) => {
+    > 108 |   await element.waitFor({ state: states, timeout: timeout });
+          |                 ^
+      109 | }
+      110 |
+      111 | export const assertElement = async (element: Locator, condition: keyof typeof ElementCondition, text: string | null = null) => {
+        at waitForElement (/app/helper/basic.ts:108:17)
+        at PluginEndpointsStudioGen2Page.successInitializeCall (/app/pages/mob/studio_gen2_plugin_endpoints.page.ts:161:25)
+        at /app/tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:158:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-7b913-e-p0-positive-sftp-transfer-MOB-retry1/failure.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/core-web-plugins-studio-ge-7b913-e-p0-positive-sftp-transfer-MOB-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-7b913-e-p0-positive-sftp-transfer-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-web-plugins-studio-ge-7b913-e-p0-positive-sftp-transfer-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:325:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734244-Initialize Transfer File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-transfer 
+
+    TimeoutError: locator.waitFor: Timeout 7000ms exceeded.
+    Call log:
+    [2m  - waiting for getByTestId('action-btn').first() to be visible[22m
+
+
+       at ../helper/basic.ts:108
+
+      106 |
+      107 | export const waitForElement = async (element: Locator, states: keyof typeof ElementState = 'visible', timeout: number = 7000) => {
+    > 108 |   await element.waitFor({ state: states, timeout: timeout });
+          |                 ^
+      109 | }
+      110 |
+      111 | export const assertElement = async (element: Locator, condition: keyof typeof ElementCondition, text: string | null = null) => {
+        at waitForElement (/app/helper/basic.ts:108:17)
+        at /app/tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:348:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-5225f-d-p1-negative-sftp-transfer-MOB/failure.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/core-web-plugins-studio-ge-5225f-d-p1-negative-sftp-transfer-MOB/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    TimeoutError: locator.waitFor: Timeout 7000ms exceeded.
+    Call log:
+    [2m  - waiting for getByTestId('action-btn').first() to be visible[22m
+
+
+       at ../helper/basic.ts:108
+
+      106 |
+      107 | export const waitForElement = async (element: Locator, states: keyof typeof ElementState = 'visible', timeout: number = 7000) => {
+    > 108 |   await element.waitFor({ state: states, timeout: timeout });
+          |                 ^
+      109 | }
+      110 |
+      111 | export const assertElement = async (element: Locator, condition: keyof typeof ElementCondition, text: string | null = null) => {
+        at waitForElement (/app/helper/basic.ts:108:17)
+        at /app/tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:348:25
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-5225f-d-p1-negative-sftp-transfer-MOB-retry1/failure.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/core-web-plugins-studio-ge-5225f-d-p1-negative-sftp-transfer-MOB-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-5225f-d-p1-negative-sftp-transfer-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-web-plugins-studio-ge-5225f-d-p1-negative-sftp-transfer-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:527:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734260-Initialize Download File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-download 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  getByTestId('action-initialize-failed').getByText('Initialization failed').or(getByText('Transfer failed')).or(getByText('failed')).first()
+    Expected: visible
+    Received: hidden
+    Timeout:  15000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 15000ms[22m
+    [2m  - waiting for getByTestId('action-initialize-failed').getByText('Initialization failed').or(getByText('Transfer failed')).or(getByText('failed')).first()[22m
+    [2m    19 × locator resolved to <header data-pixel-component="MpModalHeader" class="mp-modal__header mp-modal__header--full_false">…</header>[22m
+    [2m       - unexpected value "hidden"[22m
+
+
+      561 |       .or(pluginEditorStudioGen2Page.lblTransferFailedMsg)
+      562 |       .or(pluginEditorStudioGen2Page.lblStatusFailed);
+    > 563 |     await expect(errorLocator.first()).toBeVisible({ timeout: 15000 });
+          |                                        ^
+      564 |   });
+      565 |
+      566 |
+        at /app/tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:563:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-82b05-d-p1-negative-sftp-download-MOB/failure.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/core-web-plugins-studio-ge-82b05-d-p1-negative-sftp-download-MOB/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  getByTestId('action-initialize-failed').getByText('Initialization failed').or(getByText('Transfer failed')).or(getByText('failed')).first()
+    Expected: visible
+    Received: hidden
+    Timeout:  15000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 15000ms[22m
+    [2m  - waiting for getByTestId('action-initialize-failed').getByText('Initialization failed').or(getByText('Transfer failed')).or(getByText('failed')).first()[22m
+    [2m    19 × locator resolved to <header data-pixel-component="MpModalHeader" class="mp-modal__header mp-modal__header--full_false">…</header>[22m
+    [2m       - unexpected value "hidden"[22m
+
+
+      561 |       .or(pluginEditorStudioGen2Page.lblTransferFailedMsg)
+      562 |       .or(pluginEditorStudioGen2Page.lblStatusFailed);
+    > 563 |     await expect(errorLocator.first()).toBeVisible({ timeout: 15000 });
+          |                                        ^
+      564 |   });
+      565 |
+      566 |
+        at /app/tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:563:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-82b05-d-p1-negative-sftp-download-MOB-retry1/failure.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/core-web-plugins-studio-ge-82b05-d-p1-negative-sftp-download-MOB-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-82b05-d-p1-negative-sftp-download-MOB-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/core-web-plugins-studio-ge-82b05-d-p1-negative-sftp-download-MOB-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:50:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734220,5734247-Initialize Transfer File API - Success SFTP with Password @p0 @positive @sftp-transfer 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+    [2m  - waiting for getByTestId('action-initialize-call-response')[22m
+
+
+       at ../pages/mob/studio_gen2_plugin_endpoints.page.ts:163
+
+      161 |     await waitForElement(this.lblInitializeSuccessfull, 'visible', 20000);
+      162 |     await expect(this.lblInitializeSuccessfull).toBeVisible();
+    > 163 |     await this.InitializeResponse.click({ force: true });
+          |                                   ^
+      164 |     await this.page.waitForTimeout(1000);
+      165 |     await expect(this.page.locator(`//p[normalize-space()="Status code: ${statusCode}"]`)).toBeVisible();
+      166 |     await expect(this.lblResponseEndpoint).toBeVisible();
+        at PluginEndpointsStudioGen2Page.successInitializeCall (/app/pages/mob/studio_gen2_plugin_endpoints.page.ts:163:35)
+        at /app/tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:79:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/core-web-plugins-studio-ge-1cf34-d-p0-positive-sftp-transfer-MOB/failure.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/core-web-plugins-studio-ge-1cf34-d-p0-positive-sftp-transfer-MOB/error-context.md
+
+  9 failed
+    [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:79:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734332-Transfer file via SFTP with password auth returns 200 @p0 @positive @sftp-transfer 
+    [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:103:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734333-Transfer file via SFTP with private key auth returns 200 @p0 @positive @sftp-transfer @private-key 
+    [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:127:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734337-Transfer file with disallowed extension returns 400 @p0 @negative @sftp-transfer 
+    [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:150:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734345-Download file from SFTP returns 200 with presigned URL @p0 @positive @sftp-download 
+    [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:179:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734346-Download file with private key auth returns 200 @p0 @positive @sftp-download @private-key 
+    [MOB] › tests/mob/core/api/api-plugin-sftp.spec.ts:200:9 › API Plugin SFTP @staging @skip-production @api @sftpfree @core @plugin-service @wip › 5734347-Download file not found returns 400 @p0 @negative @sftp-download 
+    [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:130:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734222-Initialize Transfer File API - Success Transfer .xlsx File @p0 @positive @sftp-transfer 
+    [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:325:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734244-Initialize Transfer File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-transfer 
+    [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:527:7 › SFTP Plugin Builder - P1/P2 @core @staging @plugin-service @plugin-editor @sftp › 5734260-Initialize Download File API - Failed Invalid Credentials (Password) @p1 @negative @sftp-download 
+  1 flaky
+    [MOB] › tests/mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts:50:7 › SFTP Plugin Builder - Self-handled Authentication @core @staging @plugin-service @plugin-editor @sftp @wip › 5734220,5734247-Initialize Transfer File API - Success SFTP with Password @p0 @positive @sftp-transfer 
+  9 passed (28.9m)
+[Pipeline] echo
+hudson.AbortException: script returned exit code 1
+Did you forget the `def` keyword? WorkflowScript seems to be setting a field named testsResult (to a value of type Integer) which could lead to memory leaks or other issues.
+[Pipeline] echo
+Creating report on node alicloud-officeless-jenkins-staging-web-1-i-k1a1jbqqioubmum1bunk
+[Pipeline] echo
+/root
+[Pipeline] sh
++ sudo mkdir -p json46
+[Pipeline] sh
++ sudo mkdir -p video46
+[Pipeline] sh
++ sudo cp /root/report-mob-pw-serial/46/test-results.json json46/
+[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at BUILD level /root/report-mob-pw-serial/46 to Automation_20Report
+[htmlpublisher] Copying recursive using current thread
+[Pipeline] stash
+Stashed 1 file(s)
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] sh
++ sudo cp /root/video-pg-pw-serial/46/*.json video46/
+cp: cannot stat '/root/video-pg-pw-serial/46/*.json': No such file or directory
+[Pipeline] echo
+hudson.AbortException: script returned exit code 1
+[Pipeline] echo
+No video produced
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Send Report Notification)
+[Pipeline] echo
+Tests result: -1
+[Pipeline] unstash
+[Pipeline] sh
++ docker run --shm-size=8G -v /root/report-mob-pw-serial/46/:/app/reports --entrypoint /bin/bash imageregistry-shared-alpha-registry-vpc.ap-southeast-5.cr.aliyuncs.com/mekariengineering/pokemon-play:EX-cr-4026 -c npx send-report --file ./reports/test-results.json --product "MOB" --type WEB --buildUrl https://jenkins2-abc.mekari.io/job/SDET-XG/job/Production/job/Officeless/job/Core/job/plugin-service/46/ --jobName SDET-XG/Production/Officeless/Core/plugin-service --buildNumber 46 --webhook "https://chat.googleapis.com/v1/spaces/AAAAZcoVr_8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UbNHcJHj1gudN8QMuVUL-i607O3YajFvQ1Nizj3mxbw" --tag "(?=.*@sftp)(?!.*@api)(?!.*@skip-production)(?!.*@wip)" --bitbucket-info "https://bitbucket.org/jojocoders/plugin-service"
+{
+  status: 200,
+  statusText: 'OK',
+  headers: Object [AxiosHeaders] {
+    'content-type': 'application/json; charset=UTF-8',
+    vary: 'Origin, X-Origin, Referer',
+    date: 'Wed, 03 Jun 2026 02:34:02 GMT',
+    server: 'ESF',
+    'x-xss-protection': '0',
+    'x-frame-options': 'SAMEORIGIN',
+    'x-content-type-options': 'nosniff',
+    expires: 'Wed, 03 Jun 2026 02:34:02 GMT',
+    'cache-control': 'private',
+    'set-cookie': [
+      'COMPASS=dynamite-integration=CgAQqsH-0AYaTQAJa4lXU32QaUwrAVEuQDgZxuDNx6iiqqEcXLN5JRKKBoaoFsr64EunBY88_ifDMgfLl7rVnNiuGkZb-tV8HoB06KvhYiJbFsiF1mtPMAE; expires=Sat, 13-Jun-2026 02:34:02 GMT; path=/; Secure; HttpOnly; SameSite=none'
+    ],
+    'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+    'x-l2-request-path': 'l2-managed-13',
+    'transfer-encoding': 'chunked'
+  },
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function [FormData]], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'User-Agent': 'axios/1.11.0',
+      'Content-Length': '793',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    method: 'post',
+    url: 'https://chat.googleapis.com/v1/spaces/AAAAZcoVr_8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UbNHcJHj1gudN8QMuVUL-i607O3YajFvQ1Nizj3mxbw',
+    data: '{"text":"🏆 Summarize execution report of MOB - WEB Automation 🏆\\n📌 Automation tags: *(?=.*@sftp)(?!.*@api)(?!.*@skip-production)(?!.*@wip)*\\n\\n🔗 Bitbucket Pipeline: *<https://bitbucket.org/jojocoders/plugin-service|plugin-service plugin-service>*\\n\\n📊 Result of Automation Testing: \\n*Failed Features*\\n⛔️mob/core/api/api-plugin-sftp.spec.ts [0/6] - [720.44s]\\n⛔️mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts [10/13] - [696.22s]- (👾 _1 flaky test_)\\n\\nTotal Scenario: 19\\nTotal Passed Scenario: 10 (52.629999999999995%)\\nTotal Pipeline Duration: 1733.91s (28m 53.91s)\\nVisit <https://jenkins2-abc.mekari.io/job/SDET-XG/job/Production/job/Officeless/job/Core/job/plugin-service/46/|SDET-XG/Production/Officeless/Core/plugin-service #46> for the detail"}',
+    allowAbsoluteUrls: true
+  },
+  request: <ref *1> ClientRequest {
+    _events: [Object: null prototype] {
+      abort: [Function (anonymous)],
+      aborted: [Function (anonymous)],
+      connect: [Function (anonymous)],
+      error: [Function (anonymous)],
+      socket: [Function (anonymous)],
+      timeout: [Function (anonymous)],
+      finish: [Function: requestOnFinish]
+    },
+    _eventsCount: 7,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: true,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: true,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: 793,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: true,
+    socket: TLSSocket {
+      _tlsOptions: [Object],
+      _secureEstablished: true,
+      _securePending: false,
+      _newSessionPending: false,
+      _controlReleased: true,
+      secureConnecting: false,
+      _SNICallback: null,
+      servername: 'chat.googleapis.com',
+      alpnProtocol: false,
+      authorized: true,
+      authorizationError: null,
+      encrypted: true,
+      _events: [Object: null prototype],
+      _eventsCount: 9,
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: 'chat.googleapis.com',
+      _closeAfterHandlingError: false,
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _maxListeners: undefined,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: undefined,
+      _server: null,
+      ssl: [TLSWrap],
+      _requestCert: true,
+      _rejectUnauthorized: true,
+      timeout: 5000,
+      parser: null,
+      _httpMessage: null,
+      autoSelectFamilyAttemptedAddresses: [Array],
+      [Symbol(alpncallback)]: null,
+      [Symbol(res)]: [TLSWrap],
+      [Symbol(verified)]: true,
+      [Symbol(pendingSession)]: null,
+      [Symbol(async_id_symbol)]: -1,
+      [Symbol(kHandle)]: [TLSWrap],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: Timeout {
+        _idleTimeout: 5000,
+        _idlePrev: [TimersList],
+        _idleNext: [TimersList],
+        _idleStart: 863,
+        _onTimeout: [Function: bound ],
+        _timerArgs: undefined,
+        _repeat: null,
+        _destroyed: false,
+        [Symbol(refed)]: false,
+        [Symbol(kHasPrimitive)]: false,
+        [Symbol(asyncId)]: 25,
+        [Symbol(triggerId)]: 23
+      },
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: false,
+      [Symbol(kSetKeepAlive)]: true,
+      [Symbol(kSetKeepAliveInitialDelay)]: 1,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(connect-options)]: [Object]
+    },
+    _header: 'POST /v1/spaces/AAAAZcoVr_8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UbNHcJHj1gudN8QMuVUL-i607O3YajFvQ1Nizj3mxbw HTTP/1.1\r\n' +
+      'Accept: application/json, text/plain, */*\r\n' +
+      'Content-Type: application/json\r\n' +
+      'User-Agent: axios/1.11.0\r\n' +
+      'Content-Length: 793\r\n' +
+      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+      'Host: chat.googleapis.com\r\n' +
+      'Connection: keep-alive\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 443,
+      protocol: 'https:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype] {},
+      freeSockets: [Object: null prototype],
+      keepAliveMsecs: 1000,
+      keepAlive: true,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      maxCachedSessions: 100,
+      _sessionCache: [Object],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'POST',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    joinDuplicateHeaders: undefined,
+    path: '/v1/spaces/AAAAZcoVr_8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UbNHcJHj1gudN8QMuVUL-i607O3YajFvQ1Nizj3mxbw',
+    _ended: true,
+    res: IncomingMessage {
+      _events: [Object],
+      _readableState: [ReadableState],
+      _maxListeners: undefined,
+      socket: null,
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      joinDuplicateHeaders: undefined,
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 200,
+      statusMessage: 'OK',
+      client: [TLSSocket],
+      _consuming: true,
+      _dumped: false,
+      req: [Circular *1],
+      _eventsCount: 4,
+      responseUrl: 'https://chat.googleapis.com/v1/spaces/AAAAZcoVr_8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UbNHcJHj1gudN8QMuVUL-i607O3YajFvQ1Nizj3mxbw',
+      redirects: [],
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 32,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: 'chat.googleapis.com',
+    protocol: 'https:',
+    _redirectable: Writable {
+      _events: [Object],
+      _writableState: [WritableState],
+      _maxListeners: undefined,
+      _options: [Object],
+      _ended: true,
+      _ending: true,
+      _redirectCount: 0,
+      _redirects: [],
+      _requestBodyLength: 793,
+      _requestBodyBuffers: [],
+      _eventsCount: 3,
+      _onNativeResponse: [Function (anonymous)],
+      _currentRequest: [Circular *1],
+      _currentUrl: 'https://chat.googleapis.com/v1/spaces/AAAAZcoVr_8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=UbNHcJHj1gudN8QMuVUL-i607O3YajFvQ1Nizj3mxbw',
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      accept: [Array],
+      'content-type': [Array],
+      'user-agent': [Array],
+      'content-length': [Array],
+      'accept-encoding': [Array],
+      host: [Array]
+    },
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  data: {
+    name: 'spaces/AAAAZcoVr_8/messages/IFy0lsszRfU.IFy0lsszRfU',
+    text: '🏆 Summarize execution report of MOB - WEB Automation 🏆\n' +
+      '📌 Automation tags: *(?=.*@sftp)(?!.*@api)(?!.*@skip-production)(?!.*@wip)*\n' +
+      '\n' +
+      '🔗 Bitbucket Pipeline: *<https://bitbucket.org/jojocoders/plugin-service|plugin-service plugin-service>*\n' +
+      '\n' +
+      '📊 Result of Automation Testing: \n' +
+      '*Failed Features*\n' +
+      '⛔️mob/core/api/api-plugin-sftp.spec.ts [0/6] - [720.44s]\n' +
+      '⛔️mob/core/web/plugins/studio-gen2-sftp-plugin-builder.spec.ts [10/13] - [696.22s]- (👾 _1 flaky test_)\n' +
+      '\n' +
+      'Total Scenario: 19\n' +
+      'Total Passed Scenario: 10 (52.629999999999995%)\n' +
+      'Total Pipeline Duration: 1733.91s (28m 53.91s)\n' +
+      'Visit <https://jenkins2-abc.mekari.io/job/SDET-XG/job/Production/job/Officeless/job/Core/job/plugin-service/46/|SDET-XG/Production/Officeless/Core/plugin-service #46> for the detail',
+    thread: { name: 'spaces/AAAAZcoVr_8/threads/IFy0lsszRfU' },
+    space: { name: 'spaces/AAAAZcoVr_8' }
+  }
+}
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] End of Pipeline
+Finished: FAILURE
